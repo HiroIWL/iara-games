@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --pink: #e040fb;
+  --purple: rgba(161, 18, 104, 0.87);
+  --text-color: #cccccc;
+  --animation-delay: all 0.2s;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  word-spacing: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--text-color);
+  position: relative;
+
+  padding: 0 10px;
+}
+
+.sidebar a .text::after {
+  content: "";
+  position: absolute;
+  background-color: var(--pink);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -1px;
+  transition: var(--animation-delay);
+}
+
+.item .text:hover::after {
+  width: 95%;
+}
+
+.feather {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+body {
+  background-color: #181818;
+}
+
+.container {
+  background-color: #181818;
+  margin: auto;
+  height: 100vh;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  min-width: 260px;
+  border-right: 1px solid var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.icon {
+  color: var(--text-color);
+}
+
+.item-selected * {
+  color: var(--pink);
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.item-selected::after {
+  content: "";
+  position: absolute;
+  background-color: var(--pink);
+  height: 3px;
+  width: 95%;
+  left: 0;
+  bottom: -1px;
+
+  transition: var(--animation-delay);
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: #ccc;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+
+  align-items: center;
+  height: 64px;
+}
+
+.logo-container {
+  margin-bottom: 32px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  border: 3px solid transparent;
+  background: linear-gradient(to bottom, var(--pink), var(--purple)) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.header {
+  height: 64px;
+  padding: calc((64px - 46px) / 2) 0;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  /* max-width: 305px; */
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.user-container {
+  width: 140px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 46px;
+  height: 46px;
+  font-weight: 600;
+  color: #ccc;
+  transition: var(--animation-delay);
+}
+
+.user-container:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+.user-container:hover > .icon {
+  color: var(--pink);
+}
+
+.input-container {
+  position: relative;
+  color: #ccc;
+}
+
+.input-container > .search-input {
+  border-radius: 46px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  padding: 0 3rem 0 1rem;
+  color: #ccc;
+  height: 46px;
+  width: 100%;
+  outline: none;
+  transition: var(--animation-delay);
+}
+
+.input-container > .search-input:focus {
+  border-color: var(--pink);
+}
+
+.input-container > .icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.novidades {
+  position: relative;
+  max-width: 900px;
+  height: 392px;
+  border-radius: 10px;
+
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.novidades-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ccc;
+  max-width: 400px;
+  margin-top: auto;
+}
+
+.novidades-personagem {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 392px;
+}
+
+.novidades-logo {
+  height: 170px;
+}
+
+.novidades-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.buy {
+  background-image: linear-gradient(to left, var(--pink), var(--purple));
+  background-size: 100% 100%;
+  border-radius: 15px;
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  height: 42px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.add-carrinho-border {
+  border-radius: 16px;
+  border: 3px solid transparent;
+  background: linear-gradient(to bottom, var(--pink), var(--purple)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+}
+
+.add-carrinho {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  cursor: pointer;
+}
+
+.novidades-cards {
+  width: 276px;
+  height: 68px;
+  position: absolute;
+  right: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.novidades-cards-image {
+  height: 68px;
+  width: 68px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.novidades-cards-image:hover {
+  height: 80px;
+  width: 80px;
+}
+
+.add-carrinho > .icon {
+  margin: 0;
+  color: var(--pink);
+  position: absolute;
+}
+
+.add-carrinho:hover {
+  filter: brightness(1.2);
+}
+
+.buy:hover {
+  filter: brightness(1.2);
+}
+
+.display-jogos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.display-jogos > .section-jogo-content {
+  color: #ccc;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.line {
+  height: 1px;
+  background-color: #ccc;
+  width: 350px;
+}
+
+.display-imagens-jogos {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.display-imagens-jogos > a > img {
+  height: 280px;
+  transition: all 0.2s;
+  border-radius: 16px;
+}
+
+.display-imagens-jogos > a > img:hover {
+  height: 292px;
+}
