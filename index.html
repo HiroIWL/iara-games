@@ -3,221 +3,294 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iara Games</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- choose one -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  </head>
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+
+    <title>Iara Games</title>
+  </head>
   <body>
-    <div class="container">
-      <nav class="sidebar">
-        <div class="item logo-container">
-          <div class="logo"></div>
-          <div class="text">Iara Games</div>
+    <div class="wrapper">
+      <!-- começo sidebar -->
+      <aside id="sidebar">
+        <div class="navbar-button-container">
+          <button id="toggle-btn" class="p-0" type="button">
+            <img
+              src="./assets/images/icons/hamburger.svg"
+              alt="hamburguer menu"
+              class="sideBar-icon"
+            />
+          </button>
+
+          <div class="sidebar-logo">
+            <a href="#">Iara Games</a>
+          </div>
         </div>
 
-        <a href="#">
-          <div class="item item-selected">
-            <i class="icon" data-feather="home"></i>
-            <div class="text">Home</div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="item">
-            <i class="icon" data-feather="book"></i>
-            <div class="text">Biblioteca</div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="item">
-            <i class="icon" data-feather="message-square"></i>
-            <div class="text">Mensagens</div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="item">
-            <i class="icon" data-feather="bell"></i>
-            <div class="text">Notificações</div>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="item">
-            <i class="icon" data-feather="settings"></i>
-            <div class="text">Configurações</div>
-          </div>
-        </a>
-      </nav>
-
-      <div class="content">
-        <header class="header">
-          <div class="search-container">
-            <div class="input-container">
-              <input type="text" class="search-input" />
-              <i class="icon" data-feather="search"></i>
-            </div>
-            <i class="icon" data-feather="sliders"></i>
-          </div>
-          <div class="buttons-container">
-            <i class="icon" data-feather="grid"></i>
-            <i class="icon" data-feather="shopping-cart"></i>
-            <a href="">
-              <div class="user-container">
-                <i class="icon" data-feather="user"></i>
-                <p>Usuário</p>
-                <p></p>
-              </div>
+        <!-- lista pra começar os itens principais da navbar  -->
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <img
+                src="./assets/images/icons/HOME.svg"
+                alt="icone para a página inicial"
+              />
+              <span>Início</span>
             </a>
-          </div>
-        </header>
+          </li>
 
-        <main class="main-content">
-          <div class="novidades">
-            <img
-              class="novidades-logo"
-              src="assets/images/ruff_ghanor.png"
-              alt="Logo do jogo Ruff Ghanor"
-            />
-            <img
-              class="novidades-personagem"
-              src="assets/images/ruff_ghanor_carinha.png"
-              alt="personagem do jogo ruff ghanor"
-            />
-            <p class="novidades-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              feugiat porttitor nulla, sit amet mattis tellus.
-            </p>
-            <div class="novidades-btns">
-              <a
-                href="https://store.steampowered.com/app/2087460/Ruff_Ghanor/"
-                target="_blank"
-                class="buy"
-                >Comprar</a
-              >
-              <div class="add-carrinho">
-                <div class="add-carrinho-border"></div>
-                <i class="icon" data-feather="plus"></i>
-              </div>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <img
+                src="./assets/images/icons/LIBRARY.svg"
+                alt="icone para os seus jogos"
+              />
+              <span>Meus jogos</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <img
+                src="./assets/images/icons/MESSAGES.svg"
+                alt="icone para os foruns de comunidade"
+              />
+              <span>Comunidade</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <img
+                src="./assets/images/icons/SETTINGS.svg"
+                alt="icone para as configurações da conta"
+              />
+              <span>Configurações</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- fim da sidebar  -->
+
+      <div class="header pl-5 ml-5 sticky-lg-top">
+        <nav class="navbar px-0 py-2">
+          <div class="container-fluid">
+            <div
+              class="d-flex flex-row justify-content-center align-items-center"
+            >
+              <img
+                src="./assets/images/icons/image 30.svg"
+                alt="logo da Iara Games"
+                class="px-4 nav-item"
+              />
+              <form class="search-bar" role="search">
+                <input
+                  class="search-input"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="search-icon" type="submit">
+                  <img src="./assets/images/icons/lupa.svg" alt="ícone lupa" />
+                </button>
+              </form>
             </div>
-            <div class="novidades-cards">
-              <img
-                src="assets/images/ruff_preview1.jpg"
-                alt="preview in-game do ruff_ghanor"
-                class="novidades-cards-image"
-              />
-              <img
-                src="assets/images/ruff_preview2.jpg"
-                alt="preview in-game do ruff_ghanor"
-                class="novidades-cards-image"
-              />
-              <img
-                src="assets/images/ruff_preview3.jpg"
-                alt="preview in-game do ruff_ghanor"
-                class="novidades-cards-image"
-              />
+
+            <div class="d-flex justify-content-center align-items-center gap-2">
+              <button class="btn nav-item">
+                <img
+                  src="./assets/images/icons/mdi_cart-outline.svg"
+                  alt="Icone que leva ao carrinho"
+                />
+              </button>
+
+              <button class="btn nav-item">
+                <img
+                  src="./assets/images/icons/NOTIFICATIONS.svg"
+                  alt="Icone que leva para as notificações"
+                />
+              </button>
+
+              <button class="btn nav-item">
+                <img
+                  src="./assets/images/icons/Profile.svg"
+                  alt="Icone que leva para configurações do perfil"
+                />
+              </button>
             </div>
           </div>
-          <section class="populares display-jogos">
-            <h2 class="section-jogo-content">Jogos populares</h2>
-            <div class="line"></div>
-          </section>
-          <div class="display-imagens-jogos">
-            <a
-              href="https://store.steampowered.com/app/389170/A_Lenda_do_Heri__Edio_Definitiva"
-              target="_blank"
-              class="jogo-image-link"
-            >
-              <img
-                src="assets/images/a_lenda_do_heroi.jpeg"
-                alt="Banner do jogo A lenda do heroi"
-              />
-            </a>
-            <a
-              href="https://store.steampowered.com/app/1569520/IRMO_Grande__Brasileiro_2/"
-              target="_blank"
-              class="jogo-image-link"
-            >
-              <img
-                src="assets/images/bbb.jpeg"
-                alt="Banner do jogo O grande irmão brasileiro"
-              />
-            </a>
-            <a
-              href="https://store.steampowered.com/app/1398910/Irmo_do_Jorel_e_o_Jogo_Mais_Importante_da_Galxia"
-              target="_blank"
-              class="jogo-image-link"
-            >
-              <img
-                src="assets/images/irmao_do_jorel.jpeg"
-                alt="Banner do jogo Irmão do Jorel e o jogo mais importante da galaxia"
-              />
-            </a>
-            <a
-              href="https://store.steampowered.com/app/1747760/Momodora_Moonlit_Farewell/"
-              target="_blank"
-              class="jogo-image-link"
-            >
-              <img
-                src="assets/images/momodora.jpeg"
-                alt="Banner do jogo Momodora Moonlite Farewell"
-              />
-            </a>
-          </div>
-          <section class="recomendados display-jogos">
-            <h2 class="section-jogo-content">Recomendados</h2>
-            <div class="line"></div>
-          </section>
-          <div class="display-imagens-jogos">
-            <a
-              href="https://store.steampowered.com/app/2089980/Extremely_Powerful_Capybaras/"
-              target="_blank"
-              class="jogo-image-link"
-            >
-              <img
-                src="assets/images/powerful_capybaras.jpeg"
-                alt="Banner do jogo Powerful capybaras"
-              />
-            </a>
-            <a
-              href="https://store.steampowered.com/app/2214000/Top_Racer_Collection/"
-              target="_blank"
-              class="jogo-image-link"
-            >
-              <img
-                src="assets/images/top_racer.jpeg"
-                alt="Banner do Top Racer Collection"
-              />
-            </a>
-            <a
-              href="https://store.steampowered.com/app/952290/Zueirama/"
-              target="_blank"
-              class="jogo-image-link"
-            >
-              <img
-                src="assets/images/zueirama.jpeg"
-                alt="Banner do jogo Zueirama"
-              />
-            </a>
-            <a
-              href="https://store.steampowered.com/app/1920700/Candle_Prick/"
-              target="_blank"
-              class="jogo-image-link"
-            >
-              <img
-                src="assets/images/CandlePrick.jpg"
-                alt="Banner do jogo CandlePrick"
-              />
-            </a>
-          </div>
-        </main>
+        </nav>
       </div>
+
+      <main class="main pt-5 d-flex flex-column">
+        <div
+          class="jogo d-flex flex-row gap-4 justify-self-center align-self-center container-sm col-9"
+        >
+          <div
+            class="jogo-destaque d-flex flex-row p-5 gap-4 position-relative container-sm col-3"
+          >
+            <div class="jogo-esquerda">
+              <div class="jogo-logo">
+                <img src="./assets/images/ruff_ghanor.png" />
+              </div>
+              <div class="jogo-descricao">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                feugiat porttitor nulla, sit amet mattis tellus.
+              </div>
+            </div>
+            <div class="jogo-direita ml-auto position-absolute end-0">
+              <img src="./assets/images/ruff_ghanor_carinha.png" />
+            </div>
+            <div class="jogo-footer position-absolute d-flex">
+              <button class="jogo-button px-4 py-2 position-relative">
+                Comprar Agora
+              </button>
+              <div class="jogo-cards">
+                <img
+                  src="assets/images/ruff_preview1.jpg"
+                  alt="preview in-game do ruff_ghanor"
+                  class="jogo-cards-image"
+                />
+                <img
+                  src="assets/images/ruff_preview2.jpg"
+                  alt="preview in-game do ruff_ghanor"
+                  class="jogo-cards-image"
+                />
+                <img
+                  src="assets/images/ruff_preview3.jpg"
+                  alt="preview in-game do ruff_ghanor"
+                  class="jogo-cards-image"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="jogo-voce-gostou d-flex flex-column">
+            <p class="mb-4">Porque você gostou de Momodora</p>
+            <div class="jogo-recomendacao mb-5"></div>
+            <div class="jogo-recomendacao mb-5"></div>
+            <div class="jogo-recomendacao mb-5"></div>
+          </div>
+        </div>
+        <div class="recomendados mb-5">
+          <section class="populares display-jogos mb-4">
+            <h4 class="section-jogo-content">Recomendados para você</h4>
+          </section>
+          <div class="d-flex flex-row gap-4">
+            <img class="seta seta-flip" src="assets/images/icons/arrow.svg" />
+            <div
+              class="display-imagens-jogos d-flex flex-row gap-4 justify-self-center align-self-center"
+            >
+              <a
+                href="https://store.steampowered.com/app/389170/A_Lenda_do_Heri__Edio_Definitiva"
+                target="_blank"
+                class="jogo-image-link"
+              >
+                <img
+                  src="assets/images/game-banners/a_lenda_do_heroi.jpeg"
+                  alt="Banner do jogo A lenda do heroi"
+                />
+              </a>
+              <a
+                href="https://store.steampowered.com/app/1569520/IRMO_Grande__Brasileiro_2/"
+                target="_blank"
+                class="jogo-image-link"
+              >
+                <img
+                  src="assets/images/game-banners/bbb.jpeg"
+                  alt="Banner do jogo O grande irmão brasileiro"
+                />
+              </a>
+              <a
+                href="https://store.steampowered.com/app/1398910/Irmo_do_Jorel_e_o_Jogo_Mais_Importante_da_Galxia"
+                target="_blank"
+                class="jogo-image-link"
+              >
+                <img
+                  src="assets/images/game-banners/irmao_do_jorel.jpeg"
+                  alt="Banner do jogo Irmão do Jorel e o jogo mais importante da galaxia"
+                />
+              </a>
+              <a
+                href="https://store.steampowered.com/app/1747760/Momodora_Moonlit_Farewell/"
+                target="_blank"
+                class="jogo-image-link"
+              >
+                <img
+                  src="assets/images/game-banners/momodora.jpeg"
+                  alt="Banner do jogo Momodora Moonlite Farewell"
+                />
+              </a>
+            </div>
+            <img class="seta" src="assets/images/icons/arrow.svg" />
+          </div>
+        </div>
+        <div class="mais-vendidos mt-4">
+          <section class="populares display-jogos mb-4">
+            <h4 class="section-jogo-content">Mais vendidos</h4>
+          </section>
+          <div class="d-flex flex-row gap-4">
+            <img class="seta seta-flip" src="assets/images/icons/arrow.svg" />
+            <div
+              class="display-imagens-jogos d-flex flex-row gap-4 justify-self-center align-self-center"
+            >
+              <a
+                href="https://store.steampowered.com/app/2089980/Extremely_Powerful_Capybaras/"
+                target="_blank"
+                class="jogo-image-link"
+              >
+                <img
+                  src="assets/images/game-banners/powerful_capybaras.jpeg"
+                  alt="Banner do jogo Powerful capybaras"
+                />
+              </a>
+              <a
+                href="https://store.steampowered.com/app/2214000/Top_Racer_Collection/"
+                target="_blank"
+                class="jogo-image-link"
+              >
+                <img
+                  src="assets/images/game-banners/top_racer.jpeg"
+                  alt="Banner do Top Racer Collection"
+                />
+              </a>
+              <a
+                href="https://store.steampowered.com/app/952290/Zueirama/"
+                target="_blank"
+                class="jogo-image-link"
+              >
+                <img
+                  src="assets/images/game-banners/zueirama.jpeg"
+                  alt="Banner do jogo Zueirama"
+                />
+              </a>
+              <a
+                href="https://store.steampowered.com/app/1920700/Candle_Prick/"
+                target="_blank"
+                class="jogo-image-link"
+              >
+                <img
+                  src="assets/images/game-banners/CandlePrick.jpg"
+                  alt="Banner do jogo CandlePrick"
+                />
+              </a>
+            </div>
+            <img class="seta" src="assets/images/icons/arrow.svg" />
+          </div>
+        </div>
+      </main>
     </div>
-    <script>
-      feather.replace();
-    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/scripts/scripts.js"></script>
   </body>
 </html>

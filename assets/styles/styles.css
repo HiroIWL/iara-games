@@ -1,0 +1,320 @@
+:root {
+  --blue: #1a1c73;
+  --dark-blue: #010b1b;
+  --light-blue: #4f92ff;
+  --white: #fbfffc;
+  --green: #2fae3b;
+  --dark-green: #279032;
+  --light-green: #3fca4d;
+}
+
+body {
+  /* background-color: var(--dark-blue); */
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  min-height: 100vh;
+}
+
+.header {
+  height: fit-content;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out; /*talvez colocar var aqui*/
+  background-color: var(--dark-blue);
+  grid-area: 1 / 2 / 2 / 6;
+}
+
+.navbar {
+  display: flex;
+}
+
+#sidebar {
+  /* eram 100px */
+  width: 100px;
+  min-width: 100px;
+  min-height: 100vh;
+  z-index: 1000;
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blue);
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+#sidebar.expand {
+  width: 260px;
+  min-width: 260px;
+}
+
+.search-bar {
+  position: relative;
+  width: 328px;
+}
+
+.search-bar > .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  background: transparent;
+  border: none;
+  transform: translateY(-50%);
+  height: fit-content;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar > .search-input {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 48px;
+  background-color: var(--blue);
+  color: var(--light-blue);
+  border: none;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+.search-bar > .search-input::placeholder {
+  color: var(--light-blue);
+}
+
+.btn.nav-item {
+  background-color: var(--blue);
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+}
+
+.navbar-button-container {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#toggle-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+}
+
+#toggle-btn img {
+  color: var(--white);
+}
+
+.sidebar-logo {
+  margin: auto 0;
+}
+
+.sidebar-logo a {
+  color: var(--white);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: -webkit-baseline-middle;
+  opacity: 1;
+  min-width: min-content;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+  display: none;
+}
+
+#sidebar:not(.expand) a.sidebar-link {
+  padding: 3.6rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem 0.5rem;
+  flex: 1 1 auto;
+  list-style-type: none;
+}
+
+.sidebar-nav > .sidebar-item {
+  min-width: 100%;
+  width: 100%;
+}
+
+a.sidebar-link {
+  padding: 3.6rem 3.2rem;
+  color: var(--white);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-decoration: none;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+a.sidebar-link:hover {
+  background-color: var(--dark-blue);
+  border-left: 4px solid var(--light-blue);
+}
+
+.main {
+  background-color: var(--dark-blue);
+  grid-area: 2 / 2 / 6 / 6;
+}
+
+.jogo-destaque {
+  border-radius: 48px;
+  border: 1px solid var(--light-blue);
+  width: 750px;
+  height: 400px;
+}
+
+.jogo-esquerda {
+  width: 340px;
+}
+
+.jogo-direita {
+  width: 40%;
+  height: auto;
+}
+
+.jogo-direita > img {
+  width: 100%;
+  height: auto;
+}
+
+.jogo-footer {
+  bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 96px);
+  align-items: center;
+}
+
+.jogo-button {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--dark-green);
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+}
+
+.jogo-button:hover {
+  background-color: var(--green);
+}
+
+.jogo-cards {
+  height: 68px;
+  right: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.jogo-cards-image {
+  height: 68px;
+  width: 68px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.jogo-cards-image:hover {
+  height: 80px;
+  width: 80px;
+}
+
+.jogo-recomendacao {
+  width: 360px;
+  height: 80px;
+  background-color: var(--blue);
+  border-radius: 16px;
+}
+
+.display-imagens-jogos > a > img {
+  width: 215px;
+  height: 258px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.display-imagens-jogos > a > img {
+  transition: all 0.2s ease-in-out;
+  border-radius: 16px;
+  border: 2px solid transparent;
+}
+
+.display-imagens-jogos > a > img:hover {
+  border: 2px solid var(--light-blue);
+}
+
+.recomendados,
+.mais-vendidos {
+  width: fit-content;
+  align-self: center;
+}
+
+.seta-flip {
+  transform: rotate(180deg);
+}
+
+.section-jogo-content {
+  transform: translateX(48px);
+}
+/* 
+@media only screen and (max-width: 1300px) {
+  #sidebar {
+    width: 150%;
+    min-width: 150%;
+  }
+
+  .jogo-destaque {
+    width: 100%;
+    height: 90%;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    width: 150%;
+    min-width: 150%;
+  }
+
+  .jogo-destaque {
+    width: 100%;
+    height: 90%;
+  }
+
+
+
+} */
