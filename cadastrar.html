@@ -127,7 +127,7 @@
             </div>
             <form class="login-form">
                 <label for="login" class="login-title"
-                    >INICIAR SESSÃO COM O NOME DE USUÁRIO/E-MAIL</label
+                    >INSIRA O E-MAIL DE USUÁRIO</label
                 >
                 <input
                     id="login"
@@ -141,11 +141,7 @@
                     <label for="remember-me">Lembre-me</label>
                 </div>
             </form>
-            <button type="button" class="login-button">Iniciar Sessão</button>
-            <div class="login-links">
-                <a href="#">Não consigo iniciar a sessão</a>
-                <a href="/cadastrar">Cadastre-se gratuitamente</a>
-            </div>
+            <button type="button" class="login-button">Criar Conta</button>
         </div>
         <script>
             const loginButton = document.querySelector(".login-button");
@@ -161,7 +157,7 @@
                     return;
                 }
 
-                fetch("http://localhost:3000/login", {
+                fetch("http://localhost:3000/signup", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -173,7 +169,7 @@
                 })
                     .then(async (response) => {
                         if (response.ok) {
-                            window.location.href = "/home";
+                            window.location.href = "/";
                         } else {
                             const body = await response.json();
                             alert(body.message);
