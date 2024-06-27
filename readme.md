@@ -10,7 +10,7 @@ Utilize o Node versão >= 20.0
 
 ## Implementação do Projeto
 
-Foi utilizado o express para criar um servidor em node.js, as páginas foram criadas com html e css puro, e são servidas através dos métodos get do express.
+Foi utilizado o express para criar um servidor em node.js, as páginas foram criadas com html, css, auxílio do bootstrap e são servidas através dos métodos get do express.
 
 O servidor também conta com uma api de autenticação, onde é possível realizar o cadastro de um usuário e realizar o login.
 
