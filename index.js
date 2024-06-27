@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
+const path = require('path')
 const db = new sqlite3.Database("./db.sqlite");
 
 const jsonParser = bodyParser.json();
@@ -9,6 +10,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(jsonParser);
 app.use(urlencodedParser);
+app.use('/assets', express.static(path.join(__dirname + "/assets")));
 
 db.serialize(() => {
     db.run(
